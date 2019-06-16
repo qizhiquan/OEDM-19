@@ -1,0 +1,377 @@
+@charset "utf-8";
+/*--------------------------------------------------------------------
+　CSSの初期化
+---------------------------------------------------------------------*/
+p ins,p del,ul ins,ul del,
+ol ins,ol del,dl ins,dl del,
+table ins,table del{
+	display: inline;
+	}
+*,body,div,
+dl,dt,dd,ul,ol,li,
+h1,h2,h3,h4,h5,h6,
+pre,form,fieldset,
+p,blockquote,
+table,thead,tbody,tfoot,caption,th,td{
+	margin: 0;
+	padding: 0;
+	}
+img{
+	margin: 0;	padding: 0;	border:none;
+}
+*{
+	font-size: 100%;
+}
+div{
+	zoom: 1;
+}
+ol,ul{
+	list-style: none;
+}
+li{
+	list-style-type: none;
+}
+
+/*--------------------------------------------------------------------
+　クリアフィックス
+--------------------------------------------------------------------*/
+.clearfix:after{
+	content:"."; /* 新しい要素を作る */
+	display:block; /* ブロックレベル要素に */ 
+	clear:both;
+	height:0;
+	visibility:hidden;
+}
+.clearfix{
+	min-height:1px;
+}
+*html .clearfix{ 
+	height:1px;
+	/*\*//*/
+	height: auto;
+	overflow: hidden;
+	/**/
+}
+.clearboth{
+	clear:both;
+}
+/*--------------------------------------------------------------------
+（共通）ベースフォントサイズの統一  ページ背景
+--------------------------------------------------------------------*/
+body{
+	background: #D3D3D3;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	color: #333333;
+	font-family:"Times New Roman", Times, serif;
+	font-size:14px ;
+	font: 13px; /*Firefox、Safari、Opera等モダンブラウザやMac IE5に適用*/
+	*font-size: small; /*Win IE7およびWin IE6標準準拠モードに適用*/
+	*font: x-small; /*Win IE 5-5.5､6(後方互換モード)に適用*/
+
+	/* 背景画像の設定 */
+	background-repeat: repeat;
+
+	line-height:1.7em;
+}
+/* 段落の設定 */
+p{
+	font-size:90%;
+	margin:8px 10px;
+	padding:0;
+}
+/*--------------------------------------------------------------------
+　ベースリンク色 
+--------------------------------------------------------------------*/
+a:link,a:visited,a:active{
+	 
+	color:#369;
+	text-decoration:none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+/*--------------------------------------------------------------------
+　基本レイアウト 
+--------------------------------------------------------------------*/
+#wrapper{
+	width: 890px;
+	background: #FFFFFF;
+	border:1px solid #CECFCE;
+	margin:20px auto 0;
+}
+#header{
+	margin:20px auto 0;
+	width:850px;
+}
+#contents{
+	text-align:left;
+	/* 本文余白 見出し余白はネガティブマージンで設定する*/
+	padding:20px 70px 0;
+	margin-bottom:20px;
+	font-size:108%;
+}
+/*--------------------------------------------------------------------
+　メニュー
+--------------------------------------------------------------------*/
+ul#menu{
+	margin: 8px 0;
+	padding: 0;
+	line-height: 1;
+	background-color: #5E6E78; /* #79697D; */
+}
+ul#menu li{
+	margin: 0;
+	padding: 0;
+	float: left;
+	/* 固定幅にしたかったら
+	width: 110px;
+	*/
+	text-align: center;
+	font-size:100%;
+}
+ul#menu li a,ul#menu li.on{
+	display: block;
+	position: relative; /* for IE6 */
+	color: #fff;
+	background-color: #5E6E78; /* #79697D; */
+	padding: 12px 15px; /* メニュー幅調節 */
+}
+/* program で使用 */
+ul#menu li.link_color01 a{
+	 
+	color:#da70d6;
+}
+ul#menu li a:hover{
+	background-color:#483d8b;
+	color:#fff;
+}
+ul#menu li.on{
+	background-color:#da70d6;
+}
+/* ClearFix */
+ul#menu{
+	_height: 1px;
+	min-height: 1px;
+	/*¥*//*/
+	height: 1px;
+	overflow: hidden;
+	/**/
+}
+ul#menu:after{
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+}
+/*--------------------------------------------------------------------
+　見出し
+--------------------------------------------------------------------*/
+h2{
+	border-left:10px solid #483d8b;
+	border-bottom:1px solid #483d8b;
+	font-weight:bold;
+	line-height:1;
+	margin:30px 0 15px -25px;
+	padding:2px 0 4px 10px;
+	color:#483d8b;
+	font-size:108%;
+}
+h3{
+	font-weight:normal;
+    color: #4A61AD;
+	margin-top:20px;
+}
+/*--------------------------------------------------------------------
+　トップへ戻るボタン
+--------------------------------------------------------------------*/
+.gotop{
+	text-align:right;
+}
+/*--------------------------------------------------------------------
+　リスト　マークなしバージョン
+--------------------------------------------------------------------*/
+ul.list00{
+	margin:0 15px;
+}
+ul.list00 li{
+	list-style:none;
+}
+/*--------------------------------------------------------------------
+　リスト　黒点バージョン
+--------------------------------------------------------------------*/
+ul.list01{
+	margin:15px 15px;
+    font-size:90%;
+}
+ul.list01 li{
+	list-style:circle ;
+}
+/*--------------------------------------------------------------------
+　リスト　白点バージョン
+--------------------------------------------------------------------*/
+ul.list02{
+	margin:0 15px 0 30px;
+}
+ul.list02 li{
+	list-style:circle;
+}
+/*--------------------------------------------------------------------
+　書式  枠線囲み
+--------------------------------------------------------------------*/
+.link_dms{
+    border:2px #483d8b solid;
+	padding:4px;
+	}
+
+/*--------------------------------------------------------------------
+　書式  各種
+--------------------------------------------------------------------*/
+.bold{
+	font-weight:bold;
+}
+.white{
+	color:#fff;
+}
+.red{
+	color: #e60012;
+}
+.aqua{
+	color: #009ac6;
+}
+.darkorange{
+	color: #ff8c00;
+}
+.darkslategray{
+	color: #2f4f4f;
+}
+
+
+.height300{
+	height:300px;
+}
+ .logo_img{
+     width:850px;
+     height:236px;
+	 background:url(./logo-2019.jpg) no-repeat;
+ }
+ .logo_img h1{
+     text-align: right;
+     font-size: 28px;
+     color: #ffffff;
+     padding-right: 10px;
+     padding-top: 10px;
+ }
+.logo_img_span{
+    text-align: right;
+    font-size: 21px;
+    display: block;
+    font-weight: bold;
+    color: #ffffff;
+	/*text-shadow:2px 3px 2px #000;*/
+	background-color: rgba(0,0,0,0.4);
+    padding-right: 10px;
+    padding-top: 1px;
+}
+.logo_img_span1{
+    text-align: right;
+    font-size: 21px;
+    display: block;
+    margin-top: 154px;
+	/*text-shadow:2px 3px 2px #000;*/
+	background-color: rgba(0,0,0,0.4);
+    font-weight: bold;
+    color: #ffffff;
+    padding-right: 10px;
+}
+ .t2{
+     border-bottom:1px solid #cccccc;
+     height: 25px;
+     position: relative;
+     color: #E76D08;
+     margin: 10px 0 15px -25px;
+ }
+.t2 > span {
+    position: absolute;
+    background: #ffffff;
+    top: 15px;
+    font-weight: bold;
+    left: 0px;
+    font-size: 16px;
+    padding: 0px 10px 0px 0px;
+}
+.logo_img_span2{
+    text-align: right;
+	/*text-shadow:2px 3px 2px #000;*/
+	background-color: rgba(0,0,0,0.4);
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    padding-right: 10px;
+    padding-top: 1px;
+}
+
+@charset "utf-8";
+/*--------------------------------------------------------------------
+　変更用CSS
+---------------------------------------------------------------------*/
+
+/* 1 -トップイメージ画像は、html内で直接変更する　*/
+
+/*--------------------------------------------------------------------
+　メニュー 配色変更
+--------------------------------------------------------------------*/
+ul#menu li a ,ul#menu li.on{
+	/* メニュー幅の調節(文字の左右余白で)*/
+	padding-left: 15px;
+	padding-right: 15px;
+}
+ul#menu li.link_color01 a{
+	/* 「Program」・programページの「TOP」の文字色 */
+	color:#FFC310;
+}
+ul#menu li a:hover {
+	/* マウスオーバー時の背景色 */
+	background-color:#E76D08;
+	/* マウスオーバー時の文字色 */
+	color:#fff;
+    text-decoration: none;
+}
+ul#menu li.on{
+	/* 「DMM」・programページの「DMS」の背景色 */
+	background-color:#2D3C6D;
+}
+
+
+/*--------------------------------------------------------------------
+　見出しh2　配色変更
+--------------------------------------------------------------------*/
+h2{
+	/* 線の色 */
+	border-color:#2D3C6D;
+	/* 文字色 */
+	color:#2D3C6D;
+}
+
+/*--------------------------------------------------------------------
+　ベースリンク色 
+--------------------------------------------------------------------*/
+a:link,a:visited,a:active { 
+	/* 文字色 */
+	color:#369;
+}
+a:hover {
+	/* マウスオーバー時の背景色 */
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
